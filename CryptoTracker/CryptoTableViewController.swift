@@ -23,11 +23,17 @@ class CryptoTableViewController: UITableViewController, CoinDataDelegate {
       
         CoinData.shared.getPrices()
         
+    //    navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Report", style: .plain, target: self, action: #selector(reportTapped))
+        
        if LAContext().canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
             updateSecureButton()
         }
         
     }
+    
+//   @objc func reportTapped() {
+//
+//    }
     
     func updateSecureButton () {
         if UserDefaults.standard.bool(forKey: "secure") {
